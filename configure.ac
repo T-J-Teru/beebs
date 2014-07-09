@@ -1,21 +1,35 @@
-#                                               -*- Autoconf -*-
+#                                              -*- Autoconf -*-
+# Main configure script for BEEBS
+
+# Copyright (C) 2013-2014 Embecosm Limited and the University of Bristol
+
+# Contributor James Pallister <james.pallister@embecosm.com>
+# Contributor Jeremy Bennett <jeremy.bennett@embecosm.com>
+
+# This file is part of BEEBS
+
+# This program is free software; you can redistribute it and/or modify it
+# under the terms of the GNU General Public License as published by the Free
+# Software Foundation; either version 3 of the License, or (at your option)
+# any later version.
+
+# This program is distributed in the hope that it will be useful, but WITHOUT
+# ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+# FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for
+# more details.
+
+# You should have received a copy of the GNU General Public License along
+# with this program.  If not, see <http://www.gnu.org/licenses/>.
+
 # Process this file with autoconf to produce a configure script.
 
 AC_PREREQ([2.68])
-AC_INIT([beebs], [1.0], [james.pallister@embecosm.com])
+AC_INIT([beebs], [git-dejagnu2], [beebs@mageec.org])
 AC_CONFIG_MACRO_DIR([m4])
 AC_CONFIG_AUX_DIR([build-aux])
 
-AM_MAINTAINER_MODE([disable])
-
+# @todo FIXME
 # AM_SILENT_RULES([yes])
-
-AC_ARG_ENABLE([simulate],
-            [AS_HELP_STRING([--enable-simulate],
-                [Enable the simulation for the specified platform])],
-            [],
-            [enable_simulate=no],
-            )
 
 # Option for selecting the target board
 AC_ARG_WITH([board],
@@ -31,17 +45,20 @@ AC_ARG_WITH([chip],
     [with_chip=none]
     )
 
+# The host is where we will run the tests.
+# @note This is what will determine the cross compiler to use
+AC_CANONICAL_HOST
 
-AC_CANONICAL_SYSTEM
-
-# Work out which architecutre, board and chip we need
+# Work out which architecture, board and chip we need
 # Also pass this through to be substituted
-arch=$target_cpu
+arch=$host_cpu
 board=$with_board
 chip=$with_chip
 
 # Some platforms cannot compile certain benchmarks, so we exclude them
 # from the build
+
+# @todo FIXME. Why is this a VAR and not a --with option.
 AC_ARG_VAR(EXCLUDED_BENCHMARKS, exclude benchmarks from the build)
 
 if test -f $srcdir/config/$arch/arch.cfg; then
@@ -64,7 +81,9 @@ fi
 if test -f $srcdir/config/$arch/chips/$chip/chip.cfg; then
     source $srcdir/config/$arch/chips/$chip/chip.cfg
 fi
-AM_CONDITIONAL([CHIPSUPPORT_C], [test -f $srcdir/config/$arch/chips/$chip/chipsupport.c])
+
+AM_CONDITIONAL([CHIPSUPPORT_C],
+	       [test -f $srcdir/config/$arch/chips/$chip/chipsupport.c])
 
 if test -f $srcdir/config/$arch/boards/$board/boardsupport.h; then
     AC_DEFINE([HAVE_BOARDSUPPORT_H], [1], [Board support header is present])
@@ -80,28 +99,14 @@ AC_SUBST(CHIP, $chip)
 CFLAGS="$CFLAGS $ARCH_CFLAGS $CHIP_CFLAGS $BOARD_CFLAGS"
 LDFLAGS="$LDFLAGS $ARCH_LDFLAGS $CHIP_LDFLAGS $BOARD_LDFLAGS"
 
-AM_INIT_AUTOMAKE
-AC_PROG_LIBTOOL
+AM_INIT_AUTOMAKE([1.11])
 LT_INIT
+AC_SUBST([LIBTOOL_DEPS])
 
-AC_PROG_CC_C99
+# If we set --host, this will select the cross-compiler.
+AC_PROG_CC
 AM_PROG_AS
-
-# Quick check to see if we are cross compiling or not
-if test x$host == x$build ; then
-    cross_compiling=no
-else
-    cross_compiling=yes
-fi
-
-if test x$cross_compiling == xyes ; then
-    # Check that the specified cross compiler exists
-    AC_CHECK_PROG(CROSS_COMPILER_CHECK,$host_alias-gcc,yes,no)
-
-    if test x"${CROSS_COMPILER_CHECK}" == x"no" ; then
-        AC_MSG_ERROR([Cannot find $host_alias-gcc])
-    fi
-fi
+AC_PROG_CC_C99
 
 # List of the benchmarks. This list gets expanded into a variable passed
 # into the makefile, and configures the various makefiles. This allows an
@@ -224,13 +229,13 @@ AC_OUTPUT
 echo
 echo \*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*
 echo
-echo "Target arch                   $arch"
-echo "Target board                  $board"
-echo "Target chip                   $chip"
-echo "Target triple                 $target"
+echo "Host arch                   $arch"
+echo "Host board                  $board"
+echo "Host chip                   $chip"
+echo "Host triple                 $target"
 
 if test "x$EXCLUDED_BENCHMARKS" == x ; then
     echo "Excluded benchmarks           none"
 else
-    echo "Excluded benchmarks           $EXCLUDED_BENCHMARKS"
+    echo "Excluded benchmarks         $EXCLUDED_BENCHMARKS"
 fi

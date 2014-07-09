@@ -72,7 +72,7 @@ File: beebs.info,  Node: Preparation,  Next: Configuring the Build,  Up: Buildin
 Unpack the software and create a _separate_ directory in which to build
 it:
 
-     tar jxf beebs-0.0.1.tar.bz2
+     tar jxf beebs-git-dejagnu2.tar.bz2
      mkdir bd
      cd bd
 
@@ -138,8 +138,9 @@ File: beebs.info,  Node: Known Issues,  Prev: Running,  Up: Building and Running
 2.5 Known Problems and Issues
 =============================
 
-The following problems and issues are known about with BEEBS 0.0.1.
-Notify other issues by email to `mailto:support@embecosm.com'.
+The following problems and issues are known about with BEEBS
+git-dejagnu2. Notify other issues by email to
+`mailto:support@embecosm.com'.
 
    * `make check' does not currently work
 
@@ -759,16 +760,16 @@ Node: Top792
 Node: About1144
 Node: Building and Running BEEBS1440
 Node: Preparation1750
-Node: Configuring the Build2022
-Node: Building2834
-Node: Running3302
-Node: Known Issues3476
-Node: Adding a New Board to BEEBS3847
-Node: Where to add files4146
-Node: Configuration files5315
-Node: Header files6142
-Node: Board specific code6868
-Node: GNU Free Documentation License7670
-Node: Index30088
+Node: Configuring the Build2029
+Node: Building2841
+Node: Running3309
+Node: Known Issues3483
+Node: Adding a New Board to BEEBS3861
+Node: Where to add files4160
+Node: Configuration files5329
+Node: Header files6156
+Node: Board specific code6882
+Node: GNU Free Documentation License7684
+Node: Index30102
 
 End Tag Table
