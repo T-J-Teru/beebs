@@ -28,8 +28,7 @@ AC_INIT([beebs], [git-dejagnu2], [beebs@mageec.org])
 AC_CONFIG_MACRO_DIR([m4])
 AC_CONFIG_AUX_DIR([build-aux])
 
-# @todo FIXME
-# AM_SILENT_RULES([yes])
+AM_SILENT_RULES([yes])
 
 # Option for selecting the target board
 AC_ARG_WITH([board],
