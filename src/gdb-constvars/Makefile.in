@@ -232,6 +232,7 @@ SET_MAKE = @SET_MAKE@
 SHELL = @SHELL@
 STRIP = @STRIP@
 VERSION = @VERSION@
+WERROR_CFLAGS = @WERROR_CFLAGS@
 abs_builddir = @abs_builddir@
 abs_srcdir = @abs_srcdir@
 abs_top_builddir = @abs_top_builddir@
@@ -288,9 +289,10 @@ gdb_constvars_SOURCES = constvars.c ${platform_src}
 platform_src =  \
 	$(top_srcdir)/config/@ARCH@/boards/@BOARD@/boardsupport.c \
 	$(am__append_1)
-AM_CFLAGS = -I $(top_srcdir)/include \
-		  -I $(top_srcdir)/config/@ARCH@/boards/@BOARD@/ \
-		  -I $(top_srcdir)/config/@ARCH@/chips/@CHIP@/
+AM_CFLAGS = $(WERROR_CFLAGS) \
+          -I $(top_srcdir)/include \
+          -I $(top_srcdir)/config/@ARCH@/boards/@BOARD@/ \
+          -I $(top_srcdir)/config/@ARCH@/chips/@CHIP@/
 
 all: all-am
 

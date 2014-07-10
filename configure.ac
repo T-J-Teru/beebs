@@ -107,6 +107,27 @@ AC_PROG_CC
 AM_PROG_AS
 AC_PROG_CC_C99
 
+# Allow -Werror to be configured on/off as required.
+AC_ARG_ENABLE(werror,
+  AS_HELP_STRING([--enable-werror], [treat compile warnings as errors]),
+  [case "${enableval}" in
+     yes | y) ERROR_ON_WARNING="yes" ;;
+     no | n)  ERROR_ON_WARNING="no" ;;
+     *) AC_MSG_ERROR(bad value ${enableval} for --enable-werror) ;;
+   esac])
+
+AC_MSG_NOTICE([Var GCC = ${GCC}])
+
+# Enable -Werror by default when using gcc.  Turn it off for releases.
+if test "${GCC}" = yes -a -z "${ERROR_ON_WARNING}" && $development; then
+    ERROR_ON_WARNING=yes
+fi
+
+WERROR_CFLAGS=""
+if test "${ERROR_ON_WARNING}" = yes ; then
+    WERROR_CFLAGS="-Werror"
+fi
+
 # List of the benchmarks. This list gets expanded into a variable passed
 # into the makefile, and configures the various makefiles. This allows an
 # individual benchmark to be excluded from the compilation in a easy way.
@@ -213,6 +234,7 @@ m4_foreach([benchmark], [benchmarklist], [
     fi
 ])
 
+AC_SUBST(WERROR_CFLAGS)
 AC_SUBST(BENCHMARKS,$BENCHMARKS)
 AC_SUBST(BENCHMARKS_SUBDIRS,$BENCHMARKS_SUBDIRS)
 

@@ -234,6 +234,7 @@ SET_MAKE = @SET_MAKE@
 SHELL = @SHELL@
 STRIP = @STRIP@
 VERSION = @VERSION@
+WERROR_CFLAGS = @WERROR_CFLAGS@
 abs_builddir = @abs_builddir@
 abs_srcdir = @abs_srcdir@
 abs_top_builddir = @abs_top_builddir@
@@ -291,7 +292,7 @@ trio_snprintf_SOURCES = trio.c trio.h trio_test.c triostr.c triostr.h \
 platform_src =  \
 	$(top_srcdir)/config/@ARCH@/boards/@BOARD@/boardsupport.c \
 	$(am__append_1)
-AM_CFLAGS = -I $(top_srcdir)/include -I \
+AM_CFLAGS = $(WERROR_CFLAGS) -I $(top_srcdir)/include -I \
 	$(top_srcdir)/config/@ARCH@/boards/@BOARD@/ -I \
 	$(top_srcdir)/config/@ARCH@/chips/@CHIP@/ -DTRIO_SNPRINTF_ONLY \
 	-DTRIO_EXTENSION=0 -DTRIO_DEPRECATED=0 -DTRIO_MICROSOFT=0 \
