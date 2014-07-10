@@ -1,5 +1,174 @@
 2014-07-10  Andrew Burgess  <andrew.burgess@embecosm.com>
 
+	* src/2dfir/Makefile.am: Add GPL copyright header.
+	* src/2dfir/Makefile.in: Regenerate.
+	* src/adpcm/Makefile.am: Fix whitespace at start of line.
+	* src/adpcm/Makefile.in: Regenerate.
+	* src/bs/Makefile.am: Fix whitespace at start of line.
+	* src/bs/Makefile.in: Regenerate.
+	* src/bsort100/Makefile.am: Fix whitespace at start of line.
+	* src/bsort100/Makefile.in: Regenerate.
+	* src/bubblesort/Makefile.am: Fix whitespace at start of line.
+	* src/bubblesort/Makefile.in: Regenerate.
+	* src/cnt/Makefile.am: Remove extra blank line.
+	* src/cnt/Makefile.in: Regenerate.
+	* src/compress/Makefile.am: Add and remove blank lines to make
+	layout consistent with other files.
+	* src/compress/Makefile.in: Regenerate.
+	* src/cover/Makefile.am: Fix whitespace at start of line.
+	* src/cover/Makefile.in: Regenerate.
+	* src/crc/Makefile.am: Fix whitespace at start of line.
+	* src/crc/Makefile.in: Regenerate.
+	* src/ctl-stack/Makefile.am: Fix whitespace at start of line.
+	* src/ctl-stack/Makefile.in: Regenerate.
+	* src/ctl-string/Makefile.am: Fix whitespace at start of line.
+	* src/ctl-string/Makefile.in: Regenerate.
+	* src/ctl-vector/Makefile.am: Fix whitespace at start of line.
+	* src/ctl-vector/Makefile.in: Regenerate.
+	* src/dhrystone/Makefile.am: Fix whitespace at start of line.
+	* src/dhrystone/Makefile.in: Regenerate.
+	* src/dtoa/Makefile.am: Fix whitespace at start of line.
+	* src/dtoa/Makefile.in: Regenerate.
+	* src/duff/Makefile.am: Fix whitespace at start of line.
+	* src/duff/Makefile.in: Regenerate.
+	* src/edn/Makefile.am: Fix whitespace at start of line.
+	* src/edn/Makefile.in: Regenerate.
+	* src/expint/Makefile.am: Fix whitespace at start of line.
+	* src/expint/Makefile.in: Regenerate.
+	* src/fac/Makefile.am: Fix whitespace at start of line.
+	* src/fac/Makefile.in: Regenerate.
+	* src/fasta/Makefile.am: Fix whitespace at start of line.
+	* src/fasta/Makefile.in: Regenerate.
+	* src/fdct/Makefile.am: Add GPL copyright header.
+	* src/fdct/Makefile.in: Regenerate.
+	* src/fft/Makefile.am: Fix whitespace at start of line.
+	* src/fft/Makefile.in: Regenerate.
+	* src/fibcall/Makefile.am: Fix whitespace at start of line.
+	* src/fibcall/Makefile.in: Regenerate.
+	* src/fir/Makefile.am: Fix whitespace at start of line.
+	* src/fir/Makefile.in: Regenerate.
+	* src/float_matmult/Makefile.am: Add GPL copyright header.
+	* src/float_matmult/Makefile.in: Regenerate.
+	* src/frac/Makefile.am: Fix whitespace at start of line.
+	* src/frac/Makefile.in: Regenerate.
+	* src/gdb-bitfields/Makefile.am: Fix whitespace at start of line.
+	* src/gdb-bitfields/Makefile.in: Regenerate.
+	* src/gdb-constvars/Makefile.am: Fix whitespace at start of line.
+	* src/gdb-constvars/Makefile.in: Regenerate.
+	* src/gdb-store/Makefile.am: Fix whitespace at start of line.
+	* src/gdb-store/Makefile.in: Regenerate.
+	* src/huffbench/Makefile.am: Fix whitespace at start of line.
+	* src/huffbench/Makefile.in: Regenerate.
+	* src/insertsort/Makefile.am: Fix whitespace at start of line.
+	* src/insertsort/Makefile.in: Regenerate.
+	* src/int_matmult/Makefile.am: Add GPL copyright header.
+	* src/int_matmult/Makefile.in: Regenerate.
+	* src/janne_complex/Makefile.am: Fix whitespace at start of line.
+	* src/janne_complex/Makefile.in: Regenerate.
+	* src/jfdctint/Makefile.am: Fix whitespace at start of line.
+	* src/jfdctint/Makefile.in: Regenerate.
+	* src/lcdnum/Makefile.am: Fix whitespace at start of line.
+	* src/lcdnum/Makefile.in: Regenerate.
+	* src/levenshtein/Makefile.am: Fix whitespace at start of line.
+	* src/levenshtein/Makefile.in: Regenerate.
+	* src/lms/Makefile.am: Fix whitespace at start of line.
+	* src/lms/Makefile.in: Regenerate.
+	* src/ludcmp/Makefile.am: Fix whitespace at start of line.
+	* src/ludcmp/Makefile.in: Regenerate.
+	* src/mergesort/Makefile.am: Fix whitespace at start of line.
+	* src/mergesort/Makefile.in: Regenerate.
+	* src/miniz/Makefile.am: Fix whitespace at start of line.
+	* src/miniz/Makefile.in: Regenerate.
+	* src/minver/Makefile.am: Fix whitespace at start of line.
+	* src/minver/Makefile.in: Regenerate.
+	* src/nbody/Makefile.am: Fix whitespace at start of line.
+	* src/nbody/Makefile.in: Regenerate.
+	* src/ndes/Makefile.am: Fix whitespace at start of line.
+	* src/ndes/Makefile.in: Regenerate.
+	* src/nettle-arcfour/Makefile.am: Fix whitespace at start of line.
+	* src/nettle-arcfour/Makefile.in: Regenerate.
+	* src/nettle-cast128/Makefile.am: Fix whitespace at start of line.
+	* src/nettle-cast128/Makefile.in: Regenerate.
+	* src/nettle-des/Makefile.am: Fix whitespace at start of line.
+	* src/nettle-des/Makefile.in: Regenerate.
+	* src/nettle-md5/Makefile.am: Fix whitespace at start of line.
+	* src/nettle-md5/Makefile.in: Regenerate.
+	* src/newlib-exp/Makefile.am: Fix whitespace at start of line.
+	* src/newlib-exp/Makefile.in: Regenerate.
+	* src/newlib-log/Makefile.am: Fix whitespace at start of line.
+	* src/newlib-log/Makefile.in: Regenerate.
+	* src/newlib-mod/Makefile.am: Fix whitespace at start of line.
+	* src/newlib-mod/Makefile.in: Regenerate.
+	* src/newlib-sqrt/Makefile.am: Fix whitespace at start of line.
+	* src/newlib-sqrt/Makefile.in: Regenerate.
+	* src/ns/Makefile.am: Fix whitespace at start of line.
+	* src/ns/Makefile.in: Regenerate.
+	* src/nsichneu/Makefile.am: Fix whitespace at start of line.
+	* src/nsichneu/Makefile.in: Regenerate.
+	* src/platformcode/Makefile.am: Remove extra blank line.
+	* src/prime/Makefile.am: Fix whitespace at start of line.
+	* src/prime/Makefile.in: Regenerate.
+	* src/qsort/Makefile.am: Fix whitespace at start of line.
+	* src/qsort/Makefile.in: Regenerate.
+	* src/qurt/Makefile.am: Fix whitespace at start of line.
+	* src/qurt/Makefile.in: Regenerate.
+	* src/recursion/Makefile.am: Fix whitespace at start of line.
+	* src/recursion/Makefile.in: Regenerate.
+	* src/select/Makefile.am: Fix whitespace at start of line.
+	* src/select/Makefile.in: Regenerate.
+	* src/sglib-arraybinsearch/Makefile.am: Fix whitespace at start of
+	line.
+	* src/sglib-arraybinsearch/Makefile.in: Regenerate.
+	* src/sglib-arraysort/Makefile.am: Fix whitespace at start of
+	line.
+	* src/sglib-arraysort/Makefile.in: Regenerate.
+	* src/sglib-arraysort1/Makefile.am: Fix whitespace at start of
+	line.
+	* src/sglib-arraysort1/Makefile.in: Regenerate.
+	* src/sglib-dllist/Makefile.am: Fix whitespace at start of line.
+	* src/sglib-dllist/Makefile.in: Regenerate.
+	* src/sglib-hashtable/Makefile.am: Fix whitespace at start of
+	line.
+	* src/sglib-hashtable/Makefile.in: Regenerate.
+	* src/sglib-listinsertsort/Makefile.am: Fix whitespace at start of
+	line.
+	* src/sglib-listinsertsort/Makefile.in: Regenerate.
+	* src/sglib-listinsertsort1/Makefile.am: Fix whitespace at start
+	of line.
+	* src/sglib-listinsertsort1/Makefile.in: Regenerate.
+	* src/sglib-listsort/Makefile.am: Fix whitespace at start of line.
+	* src/sglib-listsort/Makefile.in: Regenerate.
+	* src/sglib-queue/Makefile.am: Fix whitespace at start of line.
+	* src/sglib-queue/Makefile.in: Regenerate.
+	* src/sglib-rbtree/Makefile.am: Fix whitespace at start of line.
+	* src/sglib-rbtree/Makefile.in: Regenerate.
+	* src/slre/Makefile.am: Fix whitespace at start of line.
+	* src/slre/Makefile.in: Regenerate.
+	* src/sqrt/Makefile.am: Fix whitespace at start of line.
+	* src/sqrt/Makefile.in: Regenerate.
+	* src/st/Makefile.am: Fix whitespace at start of line.
+	* src/st/Makefile.in: Regenerate.
+	* src/statemate/Makefile.am: Fix whitespace at start of line.
+	* src/statemate/Makefile.in: Regenerate.
+	* src/stringsearch1/Makefile.am: Fix whitespace at start of line.
+	* src/stringsearch1/Makefile.in: Regenerate.
+	* src/strstr/Makefile.am: Fix whitespace at start of line.
+	* src/strstr/Makefile.in: Regenerate.
+	* src/tarai/Makefile.am: Fix whitespace at start of line.
+	* src/tarai/Makefile.in: Regenerate.
+	* src/template/Makefile.am: Remove extra blank line.
+	* src/template/Makefile.in: Regenerate.
+	* src/trio-snprintf/Makefile.am: Fix whitespace at start of line.
+	* src/trio-snprintf/Makefile.in: Regenerate.
+	* src/ud/Makefile.am: Fix whitespace at start of line.
+	* src/ud/Makefile.in: Regenerate.
+	* src/whetstone/Makefile.am: Fix whitespace at start of line.
+	* src/whetstone/Makefile.in: Regenerate.
+	* src/wikisort/Makefile.am: Fix whitespace at start of line.
+	* src/wikisort/Makefile.in: Regenerate.
+
+2014-07-10  Andrew Burgess  <andrew.burgess@embecosm.com>
+
 	* configure.ac: Turn on AM_SILENT_RULES.
 	* Makefile.in: Regenerate.
 	* aclocal.m4: Regenerate.
