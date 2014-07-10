@@ -1,5 +1,9 @@
 2014-07-10  Andrew Burgess  <andrew.burgess@embecosm.com>
 
+	* src/nbody/a.out: Remove unneeded binary file.
+
+2014-07-10  Andrew Burgess  <andrew.burgess@embecosm.com>
+
 	* src/2dfir/Makefile.am: Add GPL copyright header.
 	* src/2dfir/Makefile.in: Regenerate.
 	* src/adpcm/Makefile.am: Fix whitespace at start of line.
