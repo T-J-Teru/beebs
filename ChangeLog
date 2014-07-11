@@ -1,5 +1,10 @@
 2014-07-11  Andrew Burgess  <andrew.burgess@embecosm.com>
 
+	* src/dtoa/dtoa.c: Remove support for KR_headers throughout this
+	file.
+
+2014-07-11  Andrew Burgess  <andrew.burgess@embecosm.com>
+
 	* src/prime/prime.c (uint, ulong): Change uint to ulong.
 	(divides, even, prime, swap): Change uint parameters to uint,
 	change all uint variables to ulong.
