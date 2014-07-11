@@ -38,6 +38,9 @@
    You should have received a copy of the GNU General Public License
    along with this program. If not, see <http://www.gnu.org/licenses/>. */
 
+#include <string.h>
+#include <stdlib.h>
+
 #ifndef	CHARTYPE
 #define	CHARTYPE	unsigned char
 #endif
@@ -58,16 +61,15 @@ static struct
 	Tab delta2[257];
 } pat;
 
-prep2(base, m)
-	CHARTYPE *base;
-	register m;
+void
+prep2(CHARTYPE *base, register int m)
 {
 	CHARTYPE *skipc;
 	register CHARTYPE *pe, *p;
 	register int j;
 	register Tab *d;
 	register Tab *d2;
-	register q1, tp, t, qp, jp, kp;
+	register int q1, tp, t, qp, jp, kp;
 	Tab f[256], f1[256];
 
 	pat.patlen = m;
@@ -118,19 +120,19 @@ prep2(base, m)
 	d2[0] = m+1;		/* the case where the match succeeded */
 }
 
-exec2(base, n)
-	CHARTYPE *base;
+int
+exec2(CHARTYPE *base, int n)
 {
 	int nmatch = 0;
 	register CHARTYPE *e, *s;
 	register Tab *d0 = pat.delta;
 	int lastdelta;
-	register k;
+	register int k;
 	register CHARTYPE *p, *q;
 	register CHARTYPE *prev = pat.pat+pat.patlen-1;
 	register Tab *d1 = pat.delta1;
 	register Tab *d2 = pat.delta2+1;
-	register k1, k2;
+	register int k1, k2;
 
 	lastdelta = n+pat.patlen;
 	d0[pat.lastchar] = lastdelta;	/* guaranteed to break s < e loop */

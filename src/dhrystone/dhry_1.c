@@ -18,6 +18,9 @@
 #include "dhry.h"
 #include "support.h"
 
+#include <string.h>
+#include <stdlib.h>
+
 /* This scale factor will be changed to equalise the runtime of the
    benchmarks. */
 #define SCALE_FACTOR    (REPEAT_FACTOR >> 0)
@@ -33,8 +36,6 @@ char            Ch_1_Glob,
 int             Arr_1_Glob [20];
 int             Arr_2_Glob [20] [20];
 
-extern char     *malloc ();
-Enumeration     Func_1 ();
   /* forward declaration necessary since Enumeration may not simply be int */
 
 #ifndef REG
@@ -56,7 +57,7 @@ float           Microseconds,
 
 /* end of variables for time measurement */
 
-
+int
 main ()
 /*****/
 
@@ -139,13 +140,13 @@ main ()
       /* Int_1_Loc == 5 */
 
   } /* loop "for Run_Index" */
+
+  return 0;
 }
 
-
-Proc_1 (Ptr_Val_Par)
+void
+Proc_1 (Rec_Pointer Ptr_Val_Par)
 /******************/
-
-REG Rec_Pointer Ptr_Val_Par;
     /* executed once */
 {
   REG Rec_Pointer Next_Record = Ptr_Val_Par->Ptr_Comp;
@@ -176,12 +177,11 @@ REG Rec_Pointer Ptr_Val_Par;
 } /* Proc_1 */
 
 
-Proc_2 (Int_Par_Ref)
+void
+Proc_2 (One_Fifty *Int_Par_Ref)
 /******************/
     /* executed once */
     /* *Int_Par_Ref == 1, becomes 4 */
-
-One_Fifty   *Int_Par_Ref;
 {
   One_Fifty  Int_Loc;
   Enumeration   Enum_Loc;
@@ -198,14 +198,11 @@ One_Fifty   *Int_Par_Ref;
   while (Enum_Loc != Ident_1); /* true */
 } /* Proc_2 */
 
-
-Proc_3 (Ptr_Ref_Par)
+void
+Proc_3 (Rec_Pointer *Ptr_Ref_Par)
 /******************/
     /* executed once */
     /* Ptr_Ref_Par becomes Ptr_Glob */
-
-Rec_Pointer *Ptr_Ref_Par;
-
 {
   if (Ptr_Glob != Null)
     /* then, executed */
@@ -213,7 +210,7 @@ Rec_Pointer *Ptr_Ref_Par;
   Proc_7 (10, Int_Glob, &Ptr_Glob->variant.var_1.Int_Comp);
 } /* Proc_3 */
 
-
+void
 Proc_4 () /* without parameters */
 /*******/
     /* executed once */
@@ -225,7 +222,7 @@ Proc_4 () /* without parameters */
   Ch_2_Glob = 'B';
 } /* Proc_4 */
 
-
+void
 Proc_5 () /* without parameters */
 /*******/
     /* executed once */

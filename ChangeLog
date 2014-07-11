@@ -1,5 +1,81 @@
 2014-07-11  Andrew Burgess  <andrew.burgess@embecosm.com>
 
+	* src/bs/bs.c (binary_search): Added return type.
+	* src/bsort100/bsort100.c (Initialize): Add forward declaration,
+	add return type, remove K&R style function arguments.
+	(BubbleSort): Add forward declaration, add return type, remove K&R
+	style function arguments.
+	(benchmark): Add return type.
+	* src/bubblesort/bubblesort.c (Initialize): Add forward
+	declaration, add return type, remove K&R style function arguments.
+	(BubbleSort): Add forward declaration, add return type, remove K&R
+	style function arguments.
+	* src/compress/compress.c (HSIZE): Only define once, use the last
+	definition.
+	(BITS): Only define once, both sites set the same value.
+	(PBITS): Remove unused define.
+	* src/crc32/crc_32.c: Add missing include.
+	* src/ctl-string/string.c: Add missing include.
+	* src/dhrystone/dhry.h (Arr_1_Dim, Arr_2_Dim): Change typedefs to
+	match the eventual usage.
+	(Proc_1, Proc_2, Proc_3, Proc_4): Add forward declarations.
+	(Proc_5, Proc_6, Proc_7, Proc_8): Likewise
+	(Func_1, Func_2, Func_3): Likewise.
+	* src/dhrystone/dhry_1.c: Add missing includes.  Remove forward
+	declaration of malloc and Func_1.
+	(main): Add return type, and return a value of 0.
+	(Proc_1, Proc_2, Proc_3): Add return type, remove K&R style
+	parameters.
+	(Proc_4, Proc_5): Add a return type.
+	* src/dhrystone/dhry_2.c: Add missing include.
+	(Proc_6, Proc_7, Proc_8): Add a return type, remove K&R style
+	parameters.
+	(Func_2, Func_3): Remove K&R style parameters.
+	* src/fir/fir.c (fir_filter_int): Make parameters and variables
+	const to match input data.
+	* src/gdb-advance/advance.c (func): Move to be after func2 so that
+	func2 is defined before it's used.
+	(benchmark): Change return type, given that the function returns a
+	value.
+	* src/gdb-all-types/all-types.c (benchmark): Fix return type as
+	the function returns a value.  Remove blank line at end of
+	function.
+	* src/gdb-anon/anon.c (benchmark): Fix return type of function as
+	the function returns a value.
+	* src/gdb-arrayidx/arrayidx.c (benchmark): Fix return type of
+	function as the function returns a value.
+	* src/gdb-async/async.c (baz): Add forward declaration.  Remove
+	extra blank line before definition.
+	(benchmark): Fix the return type as the function returns a value.
+	* src/miniz/miniz_b.c: Add missing include.
+	(mz_ulong): Include this typedef, required for...
+	(mz_uncompress): Add declaration.
+	* src/qsort/qsort.c (benchmark): Add return type.
+	* src/sglib-dllist/dllist.c: Add missing include.
+	* src/sglib-hashtable/hashtable.c: Add missing include.
+	* src/sglib-listinsertsort/listinsertsort.c: Add missing include.
+	* src/sglib-listinsertsort1/listinsertsort1.c: Add missing
+	include.
+	* src/sglib-listsort/listsort.c: Add missing include.
+	* src/sglib-queue/queue.c: Add missing include.
+	* src/sglib-rbtree/rbtree.c: Add missing include.
+	* src/sha/sha.c: Add missing include.
+	* src/sqrt/sqrt.c (fabs, fabs_float): Rename fabs to fabs_float to
+	avoid using the name of a standard library function.
+	(float sqrtfcn): Change use of fabs to fabs_float.
+	* src/stringsearch1/fast.fwd.inc.c: Add missing include.
+	(prep1): Add return type, remove use of K&R style arguments.
+	(exec1): Add return type, remove use of K&R style arguments.
+	Provide explicit type int to parameters and variables that were
+	previously defaulting to int.
+	* src/stringsearch1/fast.rev.d12.c: Add missing includes.
+	(prep2, exec2): Add return type, remove use of K&R style
+	arguments, make int type explicit for some parameter and
+	variables.
+	* src/stringsearch1/stringsearch1.c: Add missing include.
+
+2014-07-11  Andrew Burgess  <andrew.burgess@embecosm.com>
+
 	* config/x86_64/chips/generic/chip.cfg: New file.
 	* config/x86_64/chips/generic/chipsupport.h: New file.
 

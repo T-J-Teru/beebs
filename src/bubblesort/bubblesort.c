@@ -17,6 +17,9 @@
 #define NUMELEMS 100
 #define MAXDIM   (NUMELEMS+1)
 
+void Initialize(int Array []);
+void BubbleSort(int Array []);
+
 /* BUBBLESORT BENCHMARK PROGRAM:
  * This program tests the basic loop constructs, integer comparisons,
  * and simple array handling of compilers by sorting 10 arrays of
@@ -26,9 +29,8 @@
 int Array[MAXDIM], Seed;
 int factor;
 
-
-Initialize(Array)
-int Array[];
+void
+Initialize(int Array [])
 /*
  * Initializes given array with randomly generated integers.
  */
@@ -47,9 +49,8 @@ for (Index = 1; Index <= NUMELEMS; Index ++)
 }
 
 
-
-BubbleSort(Array)
-int Array[];
+void
+BubbleSort(int Array [])
 /*
  * Sorts an array of integers of size NUMELEMS in ascending order.
  */

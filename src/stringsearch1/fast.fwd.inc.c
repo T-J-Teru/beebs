@@ -49,6 +49,9 @@
 #endif
 typedef TABTYPE Tab;
 
+#include <string.h>
+#include <stdlib.h>
+
 static struct
 {
 	int patlen;
@@ -57,9 +60,8 @@ static struct
 	int lastchar;
 } pat;
 
-prep1(base, m)
-	CHARTYPE *base;
-	register m;
+void
+prep1(CHARTYPE *base, register int m)
 {
 	CHARTYPE *skipc;
 	register CHARTYPE *pe, *p;
@@ -80,17 +82,17 @@ prep1(base, m)
 	skipc = (CHARTYPE *)p;
 }
 
-exec1(base, n)
-	CHARTYPE *base;
+int
+exec1(CHARTYPE *base, int n)
 {
 	int nmatch = 0;
 	register CHARTYPE *e, *s;
 	register Tab *d0 = pat.delta;
 	int lastdelta;
-	register k;
+	register int k;
 	register CHARTYPE *p, *q;
 	register CHARTYPE *ep;
-	register n1 = pat.patlen-1;
+	register int n1 = pat.patlen-1;
 
 	lastdelta = n+pat.patlen;
 	d0[pat.lastchar] = lastdelta;	/* guaranteed to break s < e loop */

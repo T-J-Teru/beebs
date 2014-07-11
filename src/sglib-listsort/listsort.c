@@ -23,6 +23,7 @@
 #include <stdio.h>
 #include <string.h>
 #include "sglib.h"
+#include <stdlib.h>
 
 /* This scale factor will be changed to equalise the runtime of the
    benchmarks. */

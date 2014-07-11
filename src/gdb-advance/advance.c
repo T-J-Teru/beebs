@@ -48,16 +48,16 @@ int bar (int y)
 }
 
 
-void func()
-{
-  x = x + 5;
-  func2 ();
-}
 int func2 ()
 {
   x = 6;
 }
 
+void func()
+{
+  x = x + 5;
+  func2 ();
+}
 
 int func3 ()
 {
@@ -69,8 +69,7 @@ void marker1 ()
 {
 }
 
-
-void
+int
 benchmark ()
 {
   int result;

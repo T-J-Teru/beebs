@@ -3,6 +3,8 @@
 #include "crc.h"
 #include "support.h"
 
+#include <stdlib.h>
+
 #ifdef __TURBOC__
 #pragma warn -cln
 #endif

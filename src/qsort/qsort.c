@@ -139,6 +139,7 @@ void sort(unsigned long n)
 	}
 }
 
+int
 benchmark()
 {
   sort(20);
