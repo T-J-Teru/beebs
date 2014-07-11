@@ -279,14 +279,14 @@ static double private_mem[PRIVATE_mem], *pmem_next = private_mem;
 #ifdef IEEE_Arith
 #define DBL_DIG 15
 #define DBL_MAX_10_EXP 308
-#define DBL_MAX_EXP 1024
+#define DBL_MAX_EXP 1024UL
 #define FLT_RADIX 2
 #endif /*IEEE_Arith*/
 
 #ifdef IBM
 #define DBL_DIG 16
 #define DBL_MAX_10_EXP 75
-#define DBL_MAX_EXP 63
+#define DBL_MAX_EXP 63UL
 #define FLT_RADIX 16
 #define DBL_MAX 7.2370055773322621e+75
 #endif
@@ -294,7 +294,7 @@ static double private_mem[PRIVATE_mem], *pmem_next = private_mem;
 #ifdef VAX
 #define DBL_DIG 16
 #define DBL_MAX_10_EXP 38
-#define DBL_MAX_EXP 127
+#define DBL_MAX_EXP 127UL
 #define FLT_RADIX 2
 #define DBL_MAX 1.7014118346046923e+38
 #endif
@@ -367,7 +367,7 @@ extern int strtod_diglim;
 #ifdef IEEE_Arith
 #define Exp_shift  20
 #define Exp_shift1 20
-#define Exp_msk1    0x100000
+#define Exp_msk1    0x100000UL
 #define Exp_msk11   0x100000
 #define Exp_mask  0x7ff00000
 #define P 53
@@ -378,7 +378,7 @@ extern int strtod_diglim;
 #define Exp_1  0x3ff00000
 #define Exp_11 0x3ff00000
 #define Ebits 11
-#define Frac_mask  0xfffff
+#define Frac_mask  0xfffffUL
 #define Frac_mask1 0xfffff
 #define Ten_pmax 22
 #define Bletch 0x10
@@ -424,7 +424,7 @@ extern int strtod_diglim;
 #define Flt_Rounds 0
 #define Exp_shift  24
 #define Exp_shift1 24
-#define Exp_msk1   0x1000000
+#define Exp_msk1   0x1000000UL
 #define Exp_msk11  0x1000000
 #define Exp_mask  0x7f000000
 #define P 14
@@ -435,7 +435,7 @@ extern int strtod_diglim;
 #define Exp_1  0x41000000
 #define Exp_11 0x41000000
 #define Ebits 8	/* exponent has 7 bits, but 8 is the right value in b2d */
-#define Frac_mask  0xffffff
+#define Frac_mask  0xffffffUL
 #define Frac_mask1 0xffffff
 #define Bletch 4
 #define Ten_pmax 22
@@ -453,7 +453,7 @@ extern int strtod_diglim;
 #define Flt_Rounds 1
 #define Exp_shift  23
 #define Exp_shift1 7
-#define Exp_msk1    0x80
+#define Exp_msk1    0x80UL
 #define Exp_msk11   0x800000
 #define Exp_mask  0x7f80
 #define P 56
@@ -464,7 +464,7 @@ extern int strtod_diglim;
 #define Exp_1  0x40800000
 #define Exp_11 0x4080
 #define Ebits 8
-#define Frac_mask  0x7fffff
+#define Frac_mask  0x7fffffUL
 #define Frac_mask1 0xffff007f
 #define Ten_pmax 24
 #define Bletch 2

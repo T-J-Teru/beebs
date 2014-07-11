@@ -1,5 +1,11 @@
 2014-07-11  Andrew Burgess  <andrew.burgess@embecosm.com>
 
+	* src/dtoa/dtoa.c (DBL_MAX_EXP, Exp_msk1, Frac_mask): Mark these
+	costants as unsigned long to reflect how they are used and to
+	prevent integer overflow on 16-bit platforms.
+
+2014-07-11  Andrew Burgess  <andrew.burgess@embecosm.com>
+
 	* src/dtoa/dtoa.c: Remove support for KR_headers throughout this
 	file.
 
