@@ -1,5 +1,12 @@
 2014-07-11  Andrew Burgess  <andrew.burgess@embecosm.com>
 
+	* src/prime/prime.c (uint, ulong): Change uint to ulong.
+	(divides, even, prime, swap): Change uint parameters to uint,
+	change all uint variables to ulong.
+	(benchmark): Change uint variables to ulong.
+
+2014-07-11  Andrew Burgess  <andrew.burgess@embecosm.com>
+
 	* src/bs/bs.c (binary_search): Added return type.
 	* src/bsort100/bsort100.c (Initialize): Add forward declaration,
 	add return type, remove K&R style function arguments.
