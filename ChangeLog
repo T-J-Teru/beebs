@@ -1,3 +1,8 @@
+2014-07-11  Andrew Burgess  <andrew.burgess@embecosm.com>
+
+	* config/x86_64/chips/generic/chip.cfg: New file.
+	* config/x86_64/chips/generic/chipsupport.h: New file.
+
 2014-07-10  Andrew Burgess  <andrew.burgess@embecosm.com>
 
 	* configure.ac: Add support for --enable-werror and
