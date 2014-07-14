@@ -128,6 +128,29 @@ if test "${ERROR_ON_WARNING}" = yes ; then
     WERROR_CFLAGS="-Werror"
 fi
 
+
+build_warnings="-Wall"
+WARN_CFLAGS=""
+AC_ARG_ENABLE(build-warnings,
+  AS_HELP_STRING([--enable-build-warnings], [enable build-time compiler warnings if gcc is used]),
+  [WARN_CFLAGS="on"
+   case "${enableval}" in
+     yes | y) ;;
+     no | n)  build_warnings="" ;;
+     ,*)	t=`echo ${enableval} | sed -e "s/,/ /g"`
+		build_warnings="${build_warnings} ${t}";;
+     *,)	t=`echo ${enableval} | sed -e "s/,/ /g"`
+		build_warnings="${t} ${build_warnings}";;
+     *)		build_warnings=`echo ${enableval} | sed -e "s/,/ /g"`
+   esac])
+
+# Enable build warnings by default for gcc.i
+if test "${GCC}" = yes -a -z "${WARN_CFLAGS}" && $development; then
+   WARN_CFLAGS="${build_warnings}"
+elif test "${WARN_CFLAGS}" = on; then
+   WARN_CFLAGS="${build_warnings}"
+fi
+
 # List of the benchmarks. This list gets expanded into a variable passed
 # into the makefile, and configures the various makefiles. This allows an
 # individual benchmark to be excluded from the compilation in a easy way.
@@ -234,6 +257,7 @@ m4_foreach([benchmark], [benchmarklist], [
     fi
 ])
 
+AC_SUBST(WARN_CFLAGS)
 AC_SUBST(WERROR_CFLAGS)
 AC_SUBST(BENCHMARKS,$BENCHMARKS)
 AC_SUBST(BENCHMARKS_SUBDIRS,$BENCHMARKS_SUBDIRS)
