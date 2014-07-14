@@ -1,3 +1,9 @@
+2014-07-14  Andrew Burgess  <andrew.burgess@embecosm.com>
+
+	* src/int_matmult/matmult.c (matrix): Change typedef matrix from
+	int to long to ensure values don't overflow on platforms where an
+	int is less than 32-bits.
+
 2014-07-11  Andrew Burgess  <andrew.burgess@embecosm.com>
 
 	* src/dtoa/dtoa.c (DBL_MAX_EXP, Exp_msk1, Frac_mask): Mark these
