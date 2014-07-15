@@ -1,3 +1,13 @@
+2013-07-15  Andrew Burgess <andrew.burgess@embecosm.com>
+
+	* src/bsort100/bsort100.c (benchmark): Remove unused variables,
+	and commented out code.
+	(BubbleSort): Remove unused variable LastIndex.
+	* src/bubblesort/bubblesort.c (BubbleSort): Remove unused variable
+	LastIndex.
+	* src/cnt/cnt.c (Test): Remove unused variables and commented out
+	code.
+
 2013-07-14  Andrew Burgess <andrew.burgess@embecosm.com>
 
 	* configure.ac: Add support for build warnings.

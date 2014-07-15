@@ -54,21 +54,14 @@ int factor;
 void
 benchmark()
 {
-   long  StartTime, StopTime;
-   float TotalTime;
-
 #ifndef WCSIM
    printf("\n *** BUBBLE SORT BENCHMARK TEST ***\n\n");
    printf("RESULTS OF TEST:\n\n");
 #endif
    Initialize(Array);
-   /*   StartTime = ttime (); */
    BubbleSort(Array);
-   /*   StopTime = ttime(); */
-   /*   TotalTime = (StopTime - StartTime) / 1000.0; */
 #ifndef WCSIM
    printf("     - Number of elements sorted is %d\n", NUMELEMS);
-   printf("     - Total time sorting is %3.3f seconds\n\n", TotalTime);
 #endif
 }
 
@@ -99,7 +92,7 @@ BubbleSort(int Array [])
  */
 {
    int Sorted = FALSE;
-   int Temp, LastIndex, Index, i;
+   int Temp, Index, i;
 
    for (i = 1;
 	i <= NUMELEMS-1;           /* apsim_loop 1 0 */
