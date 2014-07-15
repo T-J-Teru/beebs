@@ -1,5 +1,10 @@
 2013-07-15  Andrew Burgess <andrew.burgess@embecosm.com>
 
+	* src/ctl-vector/vector.h (ctl_##type##VectorGetAt): Remove as
+	unused.
+
+2013-07-15  Andrew Burgess <andrew.burgess@embecosm.com>
+
 	* src/ctl-string/string.c (ctl_StringSetSubStr): Remove unused
 	variable.
 
