@@ -1,5 +1,10 @@
 2013-07-15  Andrew Burgess <andrew.burgess@embecosm.com>
 
+	* src/crc/crc.c (icrc1): Remove code with undefined behaviour.
+	(benchmark): Silence compiler warning about unused variable.
+
+2013-07-15  Andrew Burgess <andrew.burgess@embecosm.com>
+
 	* src/bsort100/bsort100.c (benchmark): Remove unused variables,
 	and commented out code.
 	(BubbleSort): Remove unused variable LastIndex.
