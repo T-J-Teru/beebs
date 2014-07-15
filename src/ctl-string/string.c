@@ -280,7 +280,6 @@ int ctl_StringSetSubStr(ctl_string* s, size_t begin, size_t end, char* string)
   size_t len2=strlen(string);
   size_t len1=end-begin;
   size_t diff=len2-len1;
-  int a=0;
   CTL_RANGE(end>=s->size)
   {
     ctl_errno=CTL_OUT_OF_RANGE;

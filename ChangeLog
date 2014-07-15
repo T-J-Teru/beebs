@@ -1,5 +1,10 @@
 2013-07-15  Andrew Burgess <andrew.burgess@embecosm.com>
 
+	* src/ctl-string/string.c (ctl_StringSetSubStr): Remove unused
+	variable.
+
+2013-07-15  Andrew Burgess <andrew.burgess@embecosm.com>
+
 	* src/crc/crc.c (icrc1): Remove code with undefined behaviour.
 	(benchmark): Silence compiler warning about unused variable.
 
