@@ -1,3 +1,18 @@
+2013-07-22  Andrew Burgess  <andrew.burgess@embecosm.com>
+
+	* src/cubic/basicmath_small.c (main): Remove unused variables.
+	* src/dtoa/dtoa.c (strtod): Remove unused variables.
+	* src/edn/edn.c (codebook): Comment out tmpMask, given that the
+	use of tmpMask is also commented out.
+	* src/expint/expint.c (expint): Add brackets following the advice
+	from gcc warnings.
+	* src/fasta/fasta.c (random_fasta): Cast buf to void in order to
+	silence a compiler warning.
+	* src/fft/fft1.c (benchmark): Cast chkerr to void in order to
+	silence a compier warning.
+	* src/frac/frac.c (frac): Return a value from the bottom of the
+	function to silence compiler warning.
+
 2013-07-15  Andrew Burgess <andrew.burgess@embecosm.com>
 
 	* src/ctl-vector/vector.h (ctl_##type##VectorGetAt): Remove as

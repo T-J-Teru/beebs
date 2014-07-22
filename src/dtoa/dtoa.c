@@ -2381,7 +2381,7 @@ strtod (const char *s00, char **se)
 	CONST char *s, *s0, *s1;
 	double aadj, aadj1;
 	Long L;
-	U aadj2, adj, rv, rv0;
+	U adj, rv, rv0;
 	ULong y, z;
 	BCinfo bc;
 	Bigint *bb, *bb1, *bd, *bd0, *bs, *delta;
