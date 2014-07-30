@@ -68,6 +68,8 @@ benchmark (void)
   ulong y = 513239L;
   swap (&x, &y);
   result = (!(prime(x) && prime(y)));
+
+  (void) result; /* Silence compiler warnings about unused result.  */
 }
 
 

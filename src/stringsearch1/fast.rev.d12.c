@@ -64,26 +64,23 @@ static struct
 void
 prep2(CHARTYPE *base, register int m)
 {
-	CHARTYPE *skipc;
 	register CHARTYPE *pe, *p;
 	register int j;
 	register Tab *d;
 	register Tab *d2;
-	register int q1, tp, t, qp, jp, kp;
+	register int q1, t, qp, jp, kp;
 	Tab f[256], f1[256];
 
 	pat.patlen = m;
 	if(m > MAXPAT)
 		abort();
 	memcpy(pat.pat, base, m);
-	skipc = 0;
 	d = pat.delta;
 	for(j = 0; j < 256; j++)
 		d[j] = pat.patlen;
 	for(p = pat.pat, pe = p+m-1; p < pe; p++)
 		d[*p] = pe-p;
 	pat.lastchar = *p;
-	skipc = (CHARTYPE *)p;
 	d2 = pat.delta1;
 	for(j = 0; j < 256; j++)
 		d2[j] = m;
@@ -116,7 +113,7 @@ prep2(CHARTYPE *base, register int m)
 		q1 += t-f1[t];
 		t = f1[t];
 	}
-/*for(j=1; j<=m; j++)printf("[%d]=%d ", j, d2[j]); printf("\n");/**/
+	/*for(j=1; j<=m; j++)printf("[%d]=%d ", j, d2[j]); printf("\n");*/
 	d2[0] = m+1;		/* the case where the match succeeded */
 }
 
@@ -127,7 +124,6 @@ exec2(CHARTYPE *base, int n)
 	register CHARTYPE *e, *s;
 	register Tab *d0 = pat.delta;
 	int lastdelta;
-	register int k;
 	register CHARTYPE *p, *q;
 	register CHARTYPE *prev = pat.pat+pat.patlen-1;
 	register Tab *d1 = pat.delta1;

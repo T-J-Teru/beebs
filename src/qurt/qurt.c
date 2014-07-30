@@ -180,6 +180,8 @@ benchmark (void)
   a[2] =  8.0;
 
   result = qurt();
+
+  (void) result; /* Silence compiler warnings about unused result.  */
 }
 
 

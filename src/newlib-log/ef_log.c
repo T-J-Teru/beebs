@@ -132,6 +132,8 @@ benchmark (void)
   result = __ieee754_logf(4);
   result = __ieee754_logf(5);
   result = __ieee754_logf(6);
+
+  (void) result; /* Silence compiler warnings about unused result.  */
 }
 
 

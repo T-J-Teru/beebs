@@ -137,9 +137,11 @@ void sort(unsigned long n)
 			}
 		}
 	}
+
+	(void) flag;
 }
 
-int
+void
 benchmark()
 {
   sort(20);

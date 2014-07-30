@@ -61,7 +61,7 @@ double ArrayA[MAX], ArrayB[MAX];
 double SumA, SumB;
 double Coef;
 
-int benchmark()
+void benchmark()
 {
 #ifdef POUT
    long StartTime, StopTime;

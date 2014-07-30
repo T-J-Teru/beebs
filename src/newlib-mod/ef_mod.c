@@ -159,6 +159,8 @@ benchmark (void)
   result = __ieee754_fmodf(5.2342, 4567.8);
   result = __ieee754_fmodf(6.2352, 5678.9);
   /* Code to benchmark goes here */
+
+  (void) result; /* Silence compiler warnings about unused result.  */
 }
 
 

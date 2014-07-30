@@ -144,6 +144,8 @@ benchmark (void)
   result = __ieee754_expf(3);
   result = __ieee754_expf(4);
   result = __ieee754_expf(5);
+
+  (void) result; /* Silence compiler warnings about unused result.  */
 }
 
 

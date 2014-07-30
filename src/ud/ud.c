@@ -138,6 +138,9 @@ void benchmark()
 
   /*  chkerr = ludcmp(nmax, n, eps); */
   chkerr = ludcmp(nmax,n);
+
+  /* Silence compiler warning about unused variable 'chkerr'.  */
+  (void) chkerr;
 }
 
 int ludcmp(int nmax, int n)

@@ -51,6 +51,7 @@ int benchmark()
     cnt += index;
   }
 
+  (void) found; /* Silence warning about unused variable `found`.  */
   return cnt;
 }
 

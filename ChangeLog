@@ -1,3 +1,90 @@
+2014-07-28  Andrew Burgess  <andrew.burgess@embecosm.com>
+
+	* src/crc32/crc_32.c (main): Comment out declaration of some
+	unused variables, cast another unused variable to void.
+	* src/gdb-advance/advance.c (func2, func3): Change return type to
+	void.
+	(benchmark): Cast unused variable to void.
+	* src/gdb-async/async.c (benchmark): Cast unused variable to void.
+	* src/gdb-constvars/constvars.c (benchmark): Cast long list of
+	defined, but unused variables to void.
+	* src/huffbench/huffbench.c (benchmark): Remove commented out
+	code, and declaration of otherwise unused variable.
+	* src/ludcmp/ludcmp.c (benchmark): Cast defined, but unused
+	variable to void.
+	* src/mergesort/mergesort.c (benchmark): Remove unused variables.
+	* src/miniz/miniz.c (MINIZ_NO_ARCHIVE_WRITING_APIS): Move
+	definition earlier in the file.
+	(def_realloc_func): Guard declaration with
+	MINIZ_NO_ARCHIVE_WRITING_APIS.
+	* src/miniz/miniz_b.c (benchmark): Remove unused variable. Case
+	data before calling mz_compress2.
+	* src/minver/minver.c (minver):  Cast defined, but unused
+	variables to void.
+	* src/ndes/ndes.c (des, ks, cyfun): Remove use of undefined
+	behaviour where '<<=' is used within assignment.
+	* src/newlib-exp/ef_exp.c (benchmark): Cast defined, but unused
+	variable to void.
+	* src/newlib-log/ef_log.c (benchmark): Likewise.
+	* src/newlib-mod/ef_mod.c (benchmark): Likewise.
+	* src/newlib-sqrt/ef_sqrt.c (benchmark): Likewise.
+	* src/prime/prime.c (benchmark): Likewise.
+	* src/qsort/qsort.c (sort): Cast defined, but unused variable to
+	void.
+	(benchmark): Change return type to void.
+	* src/qurt/qurt.c (benchmark): Cast defined, but unused variable
+	to void.
+	* src/rijndael/aes.c (c_name): Add parenthesis to make precedence
+	more obvious.
+	* src/rijndael/aesxam.c (fillrand): Change types parameters, to
+	match how function is used.
+	(encfile, decfile, main): Change type of parameters and variables,
+	to match how function is used.  Remove unused variables.
+	* src/sglib-arraybinsearch/arraybinsearch.c (benchmark): Cast
+	defined but unused variable to void.
+	* src/sglib-arraysort/arraysort.c (benchmark): Remove unused
+	variables.
+	* src/sglib-arraysort/sglib.h (GLIB_ARRAY_QUICK_SORT): Remove
+	unused variable.
+	* src/sglib-arraysort1/arraysort1.c (benchmark): Remove unused
+	variables.
+	* src/sglib-arraysort1/sglib.h (SGLIB___ARRAY_HEAP_DOWN): Remove
+	unused variable.
+	(SGLIB_ARRAY_QUICK_SORT): Remove unused variable.
+	* src/sglib-dllist/sglib.h (SGLIB_LIST_LEN, SGLIB_DL_LIST_SORT):
+	Remove unused variable.
+	* src/sglib-hashtable/hashtable.c (benchmark): Remove unused
+	variables.
+	* src/sglib-hashtable/sglib.h (SGLIB_LIST_LEN): Remove unused
+	variables.
+	* src/sglib-listinsertsort/listinsertsort.c (benchmark): Remove
+	unused variables.
+	* src/sglib-listinsertsort1/listinsertsort1.c (benchmark): Remove
+	unused variable.
+	* src/sglib-listinsertsort1/sglib.h (SGLIB_LIST_LEN): Likewise.
+	* src/sglib-listsort/listsort.c (benchmark): Likewise.
+	* src/sglib-queue/sglib.h ( #define SGLIB___ARRAY_HEAP_DOWN):
+	Likewise.
+	* src/sglib-rbtree/rbtree.c (benchmark): Likewise.
+	* src/sglib-rbtree/sglib.h
+	(SGLIB___RBTREE_FIX_INSERTION_DISCREPANCY): Remove unused
+	variables, including definitions that are then never used.
+	(SGLIB___RBTREE_FIX_DELETION_DISCREPANCY): Likewise.
+	* src/slre/slre.c (text, regexes): Change types so for
+	initialisation by string literal.
+	* src/st/st.c (benchmark): Change return type.
+	* src/stringsearch1/fast.fwd.inc.c (prep1, exec1): Remove unused
+	variables.
+	* src/stringsearch1/fast.rev.d12.c (prep2, exec2): Likewise.
+	* src/stringsearch1/stringsearch1.c (buf, search): Change type to
+	match initialisation by string literal.
+	(prep1, prep2, exec1, exec2): Change parameter types to match
+	usage.
+	* src/ud/ud.c (benchmark): Cast unused variable to void.
+	* src/whetstone/whetstone.c (main): Remove unused variables.  Add
+	a call to an otherwise unused label.
+	* src/wikisort/wikisort.c (benchmark): Remove unused variables.
+
 2013-07-22  Andrew Burgess  <andrew.burgess@embecosm.com>
 
 	* src/cubic/basicmath_small.c (main): Remove unused variables.

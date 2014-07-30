@@ -133,6 +133,8 @@ benchmark (void)
   result = __ieee754_sqrtf(6);
   result = __ieee754_sqrtf(7);
   result = __ieee754_sqrtf(8);
+
+  (void) result; /* Silence compiler warnings about unused result.  */
 }
 
 

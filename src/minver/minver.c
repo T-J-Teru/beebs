@@ -199,8 +199,12 @@ int minver(int row, int col, float eps)
 	      }
 	  }
 	det = w1;
-	return(0);
 
+	/* Silence compiler warnings about unused variables.  */
+	(void) t;
+	(void) s;
+
+	return(0);
 }
 
 

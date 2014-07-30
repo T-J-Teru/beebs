@@ -176,7 +176,7 @@
 //#define MINIZ_NO_ARCHIVE_APIS
 
 // Define MINIZ_NO_ARCHIVE_APIS to disable all writing related ZIP archive API's.
-//#define MINIZ_NO_ARCHIVE_WRITING_APIS
+#define MINIZ_NO_ARCHIVE_WRITING_APIS
 
 // Define MINIZ_NO_ZLIB_APIS to remove all ZLIB-style compression/decompression API's.
 //#define MINIZ_NO_ZLIB_APIS
@@ -1013,7 +1013,9 @@ void mz_free(void *p)
 
 static void *def_alloc_func(void *opaque, size_t items, size_t size) { (void)opaque, (void)items, (void)size; return MZ_MALLOC(items * size); }
 static void def_free_func(void *opaque, void *address) { (void)opaque, (void)address; MZ_FREE(address); }
-static void *def_realloc_func(void *opaque, void *address, size_t items, size_t size) { (void)opaque, (void)address, (void)items, (void)size; return MZ_REALLOC(address, items * size); }
+#ifndef MINIZ_NO_ARCHIVE_WRITING_APIS
+    static void *def_realloc_func(void *opaque, void *address, size_t items, size_t size) { (void)opaque, (void)address, (void)items, (void)size; return MZ_REALLOC(address, items * size); }
+#endif // #ifndef MINIZ_NO_ARCHIVE_WRITING_APIS
 
 const char *mz_version(void)
 {
@@ -3967,7 +3969,6 @@ mz_bool mz_zip_reader_extract_file_to_file(mz_zip_archive *pZip, const char *pAr
 
 // ------------------- .ZIP archive writing
 
-#define MINIZ_NO_ARCHIVE_WRITING_APIS
 #ifndef MINIZ_NO_ARCHIVE_WRITING_APIS
 
 static void mz_write_le16(mz_uint8 *p, mz_uint16 v) { p[0] = (mz_uint8)v; p[1] = (mz_uint8)(v >> 8); }

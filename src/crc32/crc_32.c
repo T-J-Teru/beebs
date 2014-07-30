@@ -146,10 +146,10 @@ int main(int argc, char *argv[])
    /* TODO: Check if this difference is because of uninitialised bits in
     * memory. If so, initialise it to 0. */
 #ifdef __LP64__
-   DWORD check_output = 18446744069884456117U;
+   // DWORD check_output = 18446744069884456117U;
 #else
    /* Assume 32 bits */
-   DWORD check_output = 469871797;
+   // DWORD check_output = 469871797;
 #endif
 
    initialise_board();
@@ -163,6 +163,7 @@ int main(int argc, char *argv[])
    stop_trigger();
 
    /* Verify that we have the correct result. */
+   (void) output;
    return 0;// - (output != check_output);
 }
 

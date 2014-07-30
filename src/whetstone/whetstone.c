@@ -117,12 +117,6 @@ main()
 	long LOOP;
 	int II, JJ;
 
-	/* added for this version */
-	long loopstart;
-	long startsec, finisec;
-	float KIPS;
-	int continuous;
-
 LCONT:
 /*
 C
@@ -375,6 +369,9 @@ C--------------------------------------------------------------------
 */
 
 	return(0);
+
+	/* HACK! Silence warning about unused label LCONT.  */
+	goto LCONT;
 }
 
 void

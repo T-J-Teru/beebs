@@ -63,7 +63,6 @@ static struct
 void
 prep1(CHARTYPE *base, register int m)
 {
-	CHARTYPE *skipc;
 	register CHARTYPE *pe, *p;
 	register int j;
 	register Tab *d;
@@ -72,14 +71,12 @@ prep1(CHARTYPE *base, register int m)
 	if(m > MAXPAT)
 		abort();
 	memcpy(pat.pat, base, m);
-	skipc = 0;
 	d = pat.delta;
 	for(j = 0; j < 256; j++)
 		d[j] = pat.patlen;
 	for(p = pat.pat, pe = p+m-1; p < pe; p++)
 		d[*p] = pe-p;
 	pat.lastchar = *p;
-	skipc = (CHARTYPE *)p;
 }
 
 int
@@ -89,7 +86,6 @@ exec1(CHARTYPE *base, int n)
 	register CHARTYPE *e, *s;
 	register Tab *d0 = pat.delta;
 	int lastdelta;
-	register int k;
 	register CHARTYPE *p, *q;
 	register CHARTYPE *ep;
 	register int n1 = pat.patlen-1;

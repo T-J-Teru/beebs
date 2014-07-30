@@ -28,13 +28,13 @@
    benchmarks. */
 #define SCALE_FACTOR    (REPEAT_FACTOR >> 0)
 
-void prep1(unsigned char *base, int m);
-void exec1(unsigned char *base, int n);
-void prep2(unsigned char *base, int m);
-void exec2(unsigned char *base, int n);
+void prep1(char *base, int m);
+void exec1(char *base, int n);
+void prep2(char *base, int m);
+void exec2(char *base, int n);
 
-unsigned char *buf="abacacbabbabbadcabdcabccacacbadbadbcabdcabcbadcbacabadbadcabcbacdcacabacabcabcbadcbacabadbadcabcbac";
-unsigned char *search="abc";
+char buf[] = "abacacbabbabbadcabdcabccacacbadbadbcabdcabcbadcbacabadbadcabcbacdcacabacabcabcbadcbacabadbadcabcbac";
+char search[] ="abc";
 
 void
 benchmark (void)

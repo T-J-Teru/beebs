@@ -54,6 +54,8 @@ benchmark (void)
  z = y;
  y = y + 2;
  y = baz ();
+
+ (void) z;
  return 0;
 }
 

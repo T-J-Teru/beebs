@@ -46,8 +46,8 @@ struct ilist {
 
 int benchmark()
 {
-  int i,a;
-  struct ilist *l, *the_list, *ll;
+  int i;
+  struct ilist *l, *the_list;
   int cnt;
 
   the_list = NULL;

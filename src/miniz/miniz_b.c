@@ -47,16 +47,16 @@ unsigned char compressed[1200];
 int benchmark()
 {
 	volatile int cnt=0;
-	int len = strlen(text), i;
+	int len = strlen(text);
 	unsigned long slen, dlen;
 
 	dlen = 1200;
-	mz_compress2(compressed, &dlen, text, len, 1);
+	mz_compress2(compressed, &dlen, (const unsigned char *) text, len, 1);
 	slen = 1200;
 	mz_uncompress(tocompress, &slen, compressed, dlen);
 
 	dlen = 1200;
-	mz_compress2(compressed, &dlen, text, len, 7);
+	mz_compress2(compressed, &dlen, (const unsigned char *) text, len, 7);
 	slen = 1200;
 	mz_uncompress(tocompress, &slen, compressed, dlen);
 

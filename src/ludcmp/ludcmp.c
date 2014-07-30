@@ -162,6 +162,7 @@ benchmark (void)
   }
 
   chkerr = ludcmp( /* nmax, */ n, eps);
+  (void) chkerr; /* Silence compiler warning.  */
 }
 
 
