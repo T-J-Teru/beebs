@@ -1,5 +1,10 @@
 2014-08-08  Andrew Burgess  <andrew.burgess@embecosm.com>
 
+	* src/nettle-arcfour/arcfour.c: Adjust SCALE_FACTOR.
+	* src/sglib-listsort/listsort.c: Likewise.
+
+2014-08-08  Andrew Burgess  <andrew.burgess@embecosm.com>
+
 	* src/2dfir/fir2dim.c: Adjust the SCALE_FACTOR value.
 	* src/adpcm/adpcm.c: Likewise.
 	* src/aha-compress/compress_test.c: Likewise.
