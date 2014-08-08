@@ -26,7 +26,7 @@
 
 /* This scale factor will be changed to equalise the runtime of the
    benchmarks. */
-#define SCALE_FACTOR    (REPEAT_FACTOR >> 0)
+#define SCALE_FACTOR    (REPEAT_FACTOR >> 6)
 
 // Like compress() but with more control, level may range from 0 (storing) to 9 (max. compression)
 int mz_compress2(unsigned char *pDest, unsigned long *pDest_len, const unsigned char *pSource, unsigned long source_len, int level);

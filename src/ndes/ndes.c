@@ -25,7 +25,7 @@
 
 /* This scale factor will be changed to equalise the runtime of the
    benchmarks. */
-#define SCALE_FACTOR    (REPEAT_FACTOR >> 0)
+#define SCALE_FACTOR    (REPEAT_FACTOR >> 2)
 
 /* A read from this address will result in an known value of 1 */
 /* #define KNOWN_VALUE (int)(*((char *)0x80200001)) Changed JG/Ebbe */

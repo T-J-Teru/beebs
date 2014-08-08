@@ -25,7 +25,7 @@
 /* This scale factor will be changed to equalise the runtime of the
    benchmarks. */
 #ifdef MATMULT_FLOAT
-#define SCALE_FACTOR    (REPEAT_FACTOR >> 5)
+#define SCALE_FACTOR    (REPEAT_FACTOR >> 2)
 #define UPPERLIMIT 10
 typedef float matrix [UPPERLIMIT][UPPERLIMIT];
 #define RANDOM_VALUE ((float) RandomInteger () / 10.0)
@@ -55,7 +55,7 @@ values_match (float v1, float v2)
 }
 
 #elif defined MATMULT_INT
-#define SCALE_FACTOR    (REPEAT_FACTOR >> 6)
+#define SCALE_FACTOR    (REPEAT_FACTOR >> 5)
 #define UPPERLIMIT 20
 #define RANDOM_VALUE (RandomInteger ())
 #define ZERO 0

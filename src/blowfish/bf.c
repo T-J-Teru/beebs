@@ -5,7 +5,7 @@
 
 /* This scale factor will be changed to equalise the runtime of the
    benchmarks. */
-#define SCALE_FACTOR    (REPEAT_FACTOR >> 11)
+#define SCALE_FACTOR    (REPEAT_FACTOR >> 8)
 
 char *ckey= "ABCDEF1234567890";
 BF_KEY key;

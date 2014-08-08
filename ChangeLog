@@ -1,3 +1,46 @@
+2014-08-08  Andrew Burgess  <andrew.burgess@embecosm.com>
+
+	* src/2dfir/fir2dim.c: Adjust the SCALE_FACTOR value.
+	* src/adpcm/adpcm.c: Likewise.
+	* src/aha-compress/compress_test.c: Likewise.
+	* src/blowfish/bf.c: Likewise.
+	* src/crc32/crc_32.c: Likewise.
+	* src/cubic/basicmath_small.c: Likewise.
+	* src/dijkstra/dijkstra_small.c: Likewise.
+	* src/edn/edn.c: Likewise.
+	* src/fasta/fasta.c: Likewise.
+	* src/fft/fft1.c: Likewise.
+	* src/fir/fir.c: Likewise.
+	* src/huffbench/huffbench.c: Likewise.
+	* src/levenshtein/levenshtein.c: Likewise.
+	* src/matmult/matmult.c: Likewise.
+	* src/mergesort/mergesort.c: Likewise.
+	* src/miniz/miniz_b.c: Likewise.
+	* src/nbody/nbody.c: Likewise.
+	* src/ndes/ndes.c: Likewise.
+	* src/nettle-arcfour/arcfour.c: Likewise.
+	* src/ns/ns.c: Likewise.
+	* src/nsichneu/nsichneu.c: Likewise.
+	* src/picojpeg/picojpeg_test.c: Likewise.
+	* src/qrduino/qrtest.c: Likewise.
+	* src/rijndael/aesxam.c: Likewise.
+	* src/sglib-arraysort1/arraysort1.c: Likewise.
+	* src/sglib-dllist/dllist.c: Likewise.
+	* src/sglib-hashtable/hashtable.c: Likewise.
+	* src/sglib-listinsertsort/listinsertsort.c: Likewise.
+	* src/sglib-listinsertsort1/listinsertsort1.c: Likewise.
+	* src/sglib-listsort/listsort.c: Likewise.
+	* src/sglib-queue/queue.c: Likewise.
+	* src/sglib-rbtree/rbtree.c: Likewise.
+	* src/sha/sha_driver.c: Likewise.
+	* src/slre/slre.c: Likewise.
+	* src/sqrt/sqrt.c: Likewise.
+	* src/st/st.c: Likewise.
+	* src/stb_perlin/stb_perlin.c: Likewise.
+	* src/ud/ud.c: Likewise.
+	* src/whetstone/whetstone.c: Likewise.
+	* src/wikisort/wikisort.c: Likewise.
+
 2014-08-07  Andrew Burgess  <andrew.burgess@embecosm.com>
 
 	* configure.ac: Remove int_matmult and float_matmult, add matmult.

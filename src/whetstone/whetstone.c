@@ -82,7 +82,7 @@ C**********************************************************************
 
 /* This scale factor will be changed to equalise the runtime of the
    benchmarks. */
-#define SCALE_FACTOR    (REPEAT_FACTOR >> 10)
+#define SCALE_FACTOR    (REPEAT_FACTOR >> 3)
 
 
 /* map the FORTRAN math functions, etc. to the C versions */

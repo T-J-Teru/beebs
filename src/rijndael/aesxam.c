@@ -45,7 +45,7 @@
 
 /* This scale factor will be changed to equalise the runtime of the
    benchmarks. */
-#define SCALE_FACTOR    (REPEAT_FACTOR >> 9)
+#define SCALE_FACTOR    (REPEAT_FACTOR >> 6)
 
 #ifndef fpos_t
    #define fpos_t size_t

@@ -23,7 +23,7 @@
 
 /* This scale factor will be changed to equalise the runtime of the
    benchmarks. */
-#define SCALE_FACTOR    (REPEAT_FACTOR >> 2)
+#define SCALE_FACTOR    (REPEAT_FACTOR >> 0)
 
 /* $Id: nsichneu.c,v 1.3 2005/04/15 09:18:42 jgn Exp $ */
 
